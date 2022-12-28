@@ -1,0 +1,81 @@
+[
+    {
+        "brand": "Subaru",
+        "models": [
+            "Baja",
+            "Brat",
+            "BRZ",
+            "Forester",
+            "Impreza",
+            "Impreza WRX",
+            "Justy",
+            "L Series",
+            "Legacy",
+            "Loyale",
+            "Outback",
+            "SVX",
+            "Tribeca",
+            "XT",
+            "XV Crosstrek"
+        ]
+    },
+    {
+        "brand": "Suzuki",
+        "models": [
+            "Aerio",
+            "Equator",
+            "Esteem",
+            "Forenza",
+            "Grand Vitara",
+            "Kizashi",
+            "Reno",
+            "Samurai",
+            "Sidekick",
+            "Swift",
+            "SX4",
+            "Verona",
+            "Vitara",
+            "X-90",
+            "XL7"
+        ]
+    },
+    {"brand": "Tesla", "models": ["Roadster", "Model S"]},
+    {
+        "brand": "Toyota",
+        "models": [
+            "4Runner",
+            "Avalon",
+            "Camry",
+            "Celica",
+            "Corolla",
+            "Corona",
+            "Cressida",
+            "Echo",
+            "FJ Cruiser",
+            "Highlander",
+            "Land Cruiser",
+            "Matrix",
+            "MR2",
+            "MR2 Spyder",
+            "Paseo",
+            "Pickup",
+            "Previa",
+            "Prius",
+            "Prius C",
+            "Prius V",
+            "RAV4",
+            "Sequoia",
+            "Sienna",
+            "Solara",
+            "Starlet",
+            "Supra",
+            "T100",
+            "Tacoma",
+            "Tercel",
+            "Tundra",
+            "Van",
+            "Venza",
+            "Yaris"
+        ]
+    }
+]
