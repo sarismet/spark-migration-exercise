@@ -1,0 +1,81 @@
+version: "3.9"
+services:
+  scylla:
+    image: scylladb/scylla:5.0.3
+    ports:
+      - 9042:9042
+    command: --smp 1 --memory 750M
+    volumes: 
+      - databases:/var/lib/scylla/data
+    networks:
+      - spark_example
+
+  postgresql:
+    image: postgres:15.1
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - 5432:5432
+    volumes: 
+      - databases:/var/lib/postgresql/data
+    networks:
+      - spark_example
+
+  init:
+    build: ./init
+    depends_on:
+      - postgresql
+      - scylla  
+    networks:
+      - spark_example
+
+  spark:
+    image: apache/spark:3.3.1
+    restart: always
+    ports:
+      - 4040:4040 
+    networks:
+      - spark_example
+
+  elasticsearch:
+    image: elasticsearch:8.5.2
+    restart: always
+    environment:
+      discovery.type: "single-node"
+      ES_JAVA_OPTS: "-Xms1g -Xmx1g"
+      xpack.security.enabled: "false"
+    ports:
+      - 9200:9200
+    volumes: 
+      - databases:/var/lib/elasticsearch/data
+    networks:
+      - spark_example
+
+  kibana:
+    image: kibana:8.5.2
+    restart: always
+    ports:
+      - 5601:5601
+    networks:
+      - spark_example
+
+  spark_migration_server:
+    build: ./app
+    ports:
+      - 8080:8080
+    depends_on:
+      - init
+      - elasticsearch  
+      - spark  
+    networks:
+      - spark_example
+
+networks:
+  spark_example:
+    driver: bridge
+
+volumes:
+  databases:
+    driver: local
