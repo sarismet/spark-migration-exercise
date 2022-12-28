@@ -1,0 +1,14 @@
+[
+    {
+        "city_name": "istanbul",
+        "districts": ["eyup", "besiktas", "beyoglu", "basaksehir", "kadikoy"]
+    },
+    {
+        "city_name": "ankara",
+        "districts": ["haskoy", "kecioren", "altindag", "etimesgut", "kalecik"]
+    },
+    {
+        "city_name": "izmir",
+        "districts": ["bayindir", "bayrakli", "kinik", "konak", "menemen"]
+    }
+]
